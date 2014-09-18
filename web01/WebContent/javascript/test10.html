@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>동적할당바인l</title>
+</head>
+
+<body>
+
+<script>
+"use strict"
+/* 함수
+  ->반복 수행하는 명령어를 별도로 묶어서 필요할 때 마다 사용
+ */
+ //명령어들 묶기= 함 수 정 의
+ function displayVarType() {
+	  "----------------------------------------------------"
+	  console.log(typeof(v1));
+	  console.log(typeof(v2));
+	  console.log(typeof(v3));
+	  console.log(typeof(v4));
+	  console.log(typeof(v5));
+	  console.log(typeof(v6));
+	  console.log(typeof(v7));
+	  
+  }
+//type binding
+//변수의 종률 (number, string, boolean)정의하는거
+//01.정적 타입 바인딩  
+//-> 한번 변수의 죵류가 결정되면 바뀌지 않는다.!
+//->변수를 선언할 때 결정
+//예시 자바에서  int v1; //정수값을 담을 변수
+//           char v2;//문자 한 자를 저장할 변수
+//              boolean v3;//논리값을 저장할 변수
+//02.동적 타입 바인딩
+//-> 값을 할당할 때 변수의 종류가 결정된다잉
+//-> 자바스크립트는 동적 타입 바인딩으로 동작한다.
+var v1; var v2; var v3; var v4; var v5; var v6;var v7;
+//함수호출!!!!!묶인 명령어 블록을 실행!!!
+
+v1=10; //number
+v2=3.14; //number
+v3="홍길동";//string
+v4=true; //boolean
+v5=null; //boolean
+v6={name:"홍길동", age:30}; //
+v7=function(){};
+displayVarType()//////////////////////////
+v1="문자열";
+v2=true;
+v3=false;
+v4=20;
+v5="okok";
+v6=true;
+v7=20;
+displayVarType();/////////////////////////
+</script>
+
+</body>
+</html>
