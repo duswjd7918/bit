@@ -2,23 +2,27 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>산술연산</title>
-<style>
-input{
-width:50px;
-}
-</style>
+<title>비교연산</title>
 </head>
 
 <body>
+<!--  HTML에서 미리 정의된 상수 값: entity 
+&nbsp;    = 스페이스
+&lt;      =less than      <
+&gt;      =greater than   >
+&quot;    = 더블 퀘테이스    "
+&amp;     =엠퍼센드          &
+&copy;    =copy right     
+&reg;     =registered trade mark.....
+-->
 <input id="v1" type="text">
 <select id="op">
-  <option>+</option>
-  <option>-</option>
-  <option>*</option>
-  <option>/</option>
-   <option>%</option>
-
+  <option>&lt;=</option> <!-- HTML상수값 '<' : &lt;-->
+  <option>>=</option>
+  <option>&lt;</option>
+  <option>></option>
+   <option>==</option>
+   <option>!=</option>
 </select>
 <input id="v2" type='text'>
 <button id ="compute">=</button>
@@ -38,12 +42,13 @@ compute.onclick=function() {
 	var a= parseInt(e1.value);
 	var b=parseInt(e2.value);
 	var e4=document.getElementById("op");
-	var result=0;
-	  if(e4.value=="+") result = a+b;
-	  else if(e4.value=="-") result = a-b;
-	  else if(e4.value=="*") result = a*b;
-	  else if(e4.value=="/") result = a/b;
-	  else if (e4.value=="%") result =a%b;
+	var result=true;
+	  if(e4.value==">=") result = a>=b;
+	  else if(e4.value=="<=") result = a<=b;
+	  else if(e4.value==">") result = a>b;
+	  else if(e4.value=="<") result = a<b;
+	  else if (e4.value=="==") result =a==b;
+	  else if (e4.value=="!=") result =a!=b;
 	var e3=document.getElementById("result");
 	e3.value = result;
 	

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>,,,,</title>
+</head>
+
+<body>
+<script>
+"use strict";
+//== 연산자
+//암시적 형변환 implicit type conversion
+//연산을 위해 두개의 값을 같은 타입으로 자동으로 형 변환 하는 것.
+//->   == 연산에서 암시적 형변환은 어떤 타입의 값을 number로변환한다.
+console.log("==연산자 암시적 형변환 테스트  --------------------")
+console.log("'false'==0", 'fasle'==0);
+console.log("'0=='false'", 'fasle'==0);
+console.log("'true'==1", 'true'==1);
+console.log("1=='true'", 1=='true');
+console.log("'okok'==1", 'okok'==1);
+console.log("1=='okok'",1=='okok');
+console.log("'1'==true", '1'==true);
+console.log("'okok'==0", 'fasle'==0);
+//'false' =? Boolean('false') = true
+console.log("'false'==false",'false'==false);//false  문자열 은true
+console.log("100='100'",100=='100');//true  숫자라능
+
+var x = '100';
+if(x==100){
+	console.log('x의 값을 100 입니다');
+	
+}
+x=100;
+//===은  **타입*과 값이 일치할 때만 투루ㅜㅜㅜㅜ  // 숫자면 ok 문자는 ㄴㄴ
+if(x===100)
+	{
+	  console.log('x의 값은 완전히 100입니다.');
+	}
+var y='오호롸';
+if(y) {
+	console.log('Y 참임');
+	
+}
+
+console.log("''==false", ''==false);
+console.log("''===false",''===false);
+console.log("0==false", 0== false);
+console.log("0===false",0===false);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>반복 </title>
+</head>
+
+<body>
+<script>
+"use strict";
+//while(조건) 문장 ;
+var a =1;
+var result=1;
+
+while(a < 5)
+ {
+	a ++;
+	result *=a;
+ }
+ console.log(a, result);
+//do while (조건)
+	a=1;result=1;
+	do {
+		a++;
+		result *= a;
+	}while(a < 5);
+	console.log(a,result);
+ 
+//for (초기식;조건;증감/감소)
+	for(var a=1;a<10;a++){
+	 for(var y=1;y<10;y++)
+		 {
+		 console.log(a + "*"+y+"=" +(a*y));		 
+		 }
+		}
+console.log('for.....................');
+		//for.. in
+		var arr3=[10,20,30,40,59];
+		for(var i=0; i<arr3.length; i++)
+			{
+			console.log(arr3[i]);
+			
+			}
+console.log(",for in,,,,,,,,,,,,");
+for(var i in arr3) {
+	console.log(arr3[i]);
+}
+//정적할당은 아예 안되는군.../* 
+var starr[4]={0,3,5,2,3};
+console.log(starr.length);
+  */
+</script>
+
+</body>
+</html>

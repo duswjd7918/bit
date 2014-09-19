@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>조건2</title>
+</head>
+
+<body>
+<script>
+"use strict";
+var level=3;
+switch(level){
+case 0: console.log('손님');break;
+case 1: console.log('일반');break;
+case 2: console.log('관리자');break;
+case 3: console.log('기타');break;
+}
+var auth = 3;
+switch(auth) {
+case 3: console.log('삭제가능'); 
+case 2: console.log('변경가능');
+case 1: console.log('작성가능');
+default: console.log('조회가능');
+}
+var a=10; 
+var b=20;
+var max=0;
+
+/* if(a>b) max=a;
+else max = b; */
+max=(a>b) ? a:b;
+console.log('max=',max);
+console.log("---------------------");
+a=25; b=38;max=0;
+(a>b)&&(max=a); //max=25
+console.log(max);
+(a>b)||(max=b); 
+console.log(max);
+</script>
+
+</body>
+</html>

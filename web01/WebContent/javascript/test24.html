@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수3 </title>
+</head>
+
+<body>
+<script>
+"use strict";
+//함수
+/* 
+반복사용할 명령어들을 묶어 두느ㄴ 문법
+1.function 함수명() {}
+2.function 함수명(파라, 파라미터,...){}
+3.function 함수명() {...; return 값;}
+4.function 함수명(파라, 파라미터...){...; return 값;} */
+
+//함수: 반복적으로 사용되고 
+     // 나중에 변경하기 쉬ㅂ게 만들기 위해!!
+     //함수를 사용하여 명령어들을 묶는다.
+//파라미터 x, 리털ㄴ값x
+function boundary() {
+	console.log("-------------------------");
+	}
+//파라미터 o, 리털ㄴ값x
+//파라미터란(parameter)?, 함수를 호출할 때 넘어오는 값을 담는 변수
+//아규먼트란(argument)? 함수를 호출할 때 넘겨주는 값
+//구렇지마는~~ 현없에서는  파라미터와 아규먼틀 ㄹ 걍 막씀!
+//분석/설계에서는 구분하여 사요!!!!!옹!!!
+function displayScore(score) {
+	console.log("이름:", score[0]);
+	console.log("국어:", score[1]);
+	console.log("양아:", score[2]);
+	console.log("스힉:", score[3]);
+	console.log("과학:", score[4]);
+	console.log("ㅅㅏ회:", score[5]);
+	console.log("총점:",score[6]);
+	console.log("평귬:",score[7]);
+}
+function computeTotal(score){
+	var sum = 0;
+	for(var i=1; i<6;i++)
+		{
+		sum += score[i];		
+		}
+	score[6] =sum;
+}
+//파라미터   o   리턴값  o
+function computeAverage(sum, count){	
+	return sum/count;
+}
+
+
+var s1=["홍길동",100,100,50,80,90];
+var s2=["임꺾쭹",80,90,90,100,100];
+var s3=["배연정",100,100,100,100,100];
+
+computeTotal(s1);
+s1[7] = computeAverage(s1[6] , 5);
+computeTotal(s2);
+s2[7] = computeAverage(s2[6], 5);
+computeTotal(s3);
+s3[7] = computeAverage(s3[6],5);
+
+boundary();//함수호출: 위에 정의한 명령들ㅇ,ㄹ 재사용
+displayScore(s1);//파라미터 값으로 s1 배열을 넘긴다.
+//s1 을  아 규 먼 트 라고 한다.! ★★★★★★★
+
+boundary();
+displayScore(s2);
+
+boundary();
+displayScore(s3);
+
+</script>
+
+</body>
+</html>

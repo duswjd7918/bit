@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>논리연산자</title>
+</head>
+
+<body>
+<!--  논리연산자
+! (not) ex) !true = falue;
+&& (AND; 둘다 true일 때만 true)   true && true =  true
+|| (OR; 둘 중 하나라도 true 면true) true || false = true
+-->
+
+<script>
+"use strict"
+console.log("!true", !true);
+console.log("!false", !false);
+console.log("true && true", true && true);
+console.log("true && false", true && false);
+console.log("false && true", false && true);
+console.log("false && false", false && false);
+console.log("true || true", true || true);
+console.log("true||false", true|| false);
+console.log("false ||true", false||true);
+console.log("false ||false", false || false);
+console.log("-------------------");
+
+var a=true;
+var b=false;
+var r =0;
+var x = a & (r=30);
+console.log(r);
+
+r=0;
+var x= a  && (r=30);
+console.log(r);
+
+r=0;
+var x= b  & (r=30);
+console.log(r);
+
+r=0;
+var x= b  && (r=30);
+console.log(r);
+
+</script>
+
+</body>
+</html>

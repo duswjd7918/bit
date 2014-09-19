@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>비트연산</title>
+</head>
+<!--  비트 이동 연산자
+<< : 왼쪽으로이동
+<<<                              
+>>>:오른쪽으로 이동   빈칸은 0.
+>> : 오른쪽으로 이동  빈칸은 부호뷔으로 채운다 .
+ --> 
+<body>
+<script>
+var a=10;    //0000 1010
+console.log(a>>2); //0010       2
+a=-10;             11110110
+console.log(a>>2); //// 11~11 1101     -3
+a=-10;
+console.log(a>>>2);// 00111~11 1101     엄청큰값ㅋ
+
+a=10;
+console.log(a<<1); //0001 0100       20    
+console.log(a<<2); //0010 1000       40
+console.log(a<<3); ///      80
+
+//비트 논리연사자  &   |   ^   ~
+//& :  두 비트가 모두 1인때만 결과가 1
+//| :  둘 중 하나의 비트라도 1이면 결과느 1            !!!!
+//^(XOR)  두 비트의 값이 다를때 결과는 1 
+// ~ :  1   -> 0        0   -> 1
+var a =10;
+var b =7;
+console.log(a&b);
+console.log(a|b);
+console.log(a^b);
+console.log(~a);
+
+</script>
+
+</body>
+</html>
