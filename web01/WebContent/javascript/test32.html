@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클로져3</title>
+</head>
+
+<body>
+<script>
+"use strict";
+var score=[100,90,80,70,80];
+//문제: 5개 과목의 성적 합계를 구하세요!
+//클로저 사용전   반복문
+var sum=0;
+for (var i in score) {
+	 sum += score[i];
+}
+console.log("sum=",sum);
+
+//클로저 사용 후******************************************
+ 	//이 each함수가 잇다고 가정할때야ㅑㅑㅑㅑㅑㅑ
+ 	
+function each(arr,func){
+	for(var i in arr){
+				func(i,arr[i]);
+	}
+}
+  var result2 =0;
+  each(score,function(index, value){
+  result2 += value;
+  }); 
+  console.log("result2=",result2);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클로져 2 ~~~</title>
+</head>
+
+<body>
+<script>
+"use strict";
+//함수를 아큐먼트로 넘기기
+function fire(method){
+	  method();	
+}
+//1번   일반함수넘기기
+function myGun() {
+	console.log('따따따 콩!');
+}
+fire(myGun);
+
+
+//2번  익명함수 넘기기
+fire(function() {
+	console.log("드르르르륵,,,, 찌르르를...")
+	console.log("털턽렅렅ㄹ털../");
+	});
+	
+//사례222222222222222222222222222222222222222222222
+
+ function compute3(money, interest) {
+	 var x = money + interest(money);
+	 console.log("원금+이자=",x);
+ }
+
+ compute3(    1000000,    function(m){ return m*0.021; }     );
+  
+ compute3(    1000000,    function(m){ return m*0.035; }     );
+
+
+ 
+ 
+ 
+	
+</script>
+</body>
+</html>
