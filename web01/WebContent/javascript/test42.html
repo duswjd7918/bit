@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ECMAscript의 속성 추가방법 </title>
+</head>
+<body>
+	<script>
+		"use strict";
+		
+	var obj1={}; //객체를 만들엇군
+	obj1.name="홈길동";
+	obj1['kor'] =100;
+	obj1["eng"]=100;
+
+	
+	//Object() 함수에 있는 기능을 사용하여 객체에 값 추가하기!
+	//Object.defineProperty(객체,'키',{설정정보}); 지정!!
+
+	//{설정정보}  엔 뭐가 들어가려나?    (고급..ㄷ ㄷ )
+		//value ->객체에 저장할 값
+		//writable ->나중에 값 변경할 수 있는지 여부를 지정(기본:false)
+		//get->값을 리턴할 때 호출될 함수 지정(기본: undefined)
+		//set-> 값을 설정할 때 호출될 함수 지정(기본:undefined)
+		//configurable->객체 설정 정보를 변경할 슈 있는지 여부 지정(기본:false)
+		//enumerable->for..in 을 사용하여 해당 속성을 출력할 수 있는지 여부(false)
+ 
+	//자, math를 추가해봅시다.
+  //obj.math=100;  이렇게 하지 말규 아래와  같이
+  //property란? 객체에 저장되는 값
+		  //ex. obj.name="홍길동";  <= name은 obj1의 프로퍼티당!
+     //ex.obj.plus=function() {...} <=plus는 obj1의 프로퍼티다!
+     //즉, 프로퍼티는 일반적인 값도 될 수 있고, 함수도 될 수 잇ㄷ ㅏ
+	Object.defineProperty(obj1,'math',{value:100}); //Object는 함수임에도 불구하그
+	//READ Only!!!
+	console.log(obj1.name);
+	console.log(obj1.kor);
+	console.log(obj1.eng);
+	console.log(obj1.math);
+	
+	obj1.eng =90;// changable
+	obj1.math=90;//unchangable->definedProperty() 에서 변경불가로 ☆설정되어있다.
+	 console.log(obj1.name);
+	  console.log(obj1.kor);
+	  console.log(obj1.eng);
+	  console.log(obj1.math);//error뜸
+	  //->math라는 property는 읽기 전용!!READ ONLY!!
+	</script>
+
+</body>
+</html>

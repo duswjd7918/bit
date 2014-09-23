@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>create(prototype)</title>
+</head>
+<body>
+	<script>
+		"use strict";
+		//Object.create()를 사용하여 객체 생성
+		//create({}    ,    );
+		//(빈객체생성   ,)
+		var obj1= Object.create({},{
+			name:{value:'홍길동', writable:true, enumerable : true},
+			kor:{value:100, writable:true, enumerable : true},
+			eng:{value:100, writable:true, enumerable : true},
+			math:{value:100, writable:true, enumerable : true}
+		});
+	
+		
+		console.log(obj1.name);
+		  console.log(obj1.kor);
+		  console.log(obj1.eng);
+		  console.log(obj1.math);
+		  
+		  obj1.eng =90;// changable
+		  obj1.math=90;//unchangable->definedProperty() 에서 변경불가로 ☆설정되어있다.
+  	   console.log(obj1.name);
+	    console.log(obj1.kor);
+	    console.log(obj1.eng);
+	    console.log(obj1.math);//error뜸
+		    //->math라는 property는 읽기 전용!!READ ONLY!!
+		  
+		   console.log('===================================================');
+		   //enumerable test
+		   //for(var x in배열  or  객체) {...}
+		   //객체의 경우 x는 사용자(개발자)가 추가한 프로퍼티 이름임 keyyyy
+		   //배열인 경우 x는 배열 index이다. 
+		   for(var key in obj1){
+		     console.log(key);
+		   }
+	  </script>
+
+</body>
+</html>

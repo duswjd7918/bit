@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>기본객체:Object(), Number(),String()</title>
+</head>
+<body>
+	<script>
+		"use strict";
+var str1="Hello, World!";
+var str2= new String("Hello, World!");
+console.log(typeof str1);//string
+console.log(typeof str2);//object
+
+console.log(str2.length);//13
+console.log(str1.length);//13
+
+console.log(str1.charAt(5));//,
+console.log(str1.charCodeAt(0).toString(16));//72
+                                             // 0x48
+//charCodeAt(#): 문자열에서 지정된위치의 Unicode값 리턴
+ console.log(str1.concat("okok","nono","ohora"));
+ console.log(str1);  //immutable
+ 
+ //replace()  : 특정 문자열을 다른 문다열로 대체한 새로운 문자열리턴
+ var str3=str1.replace('o','x');
+ console.log(str3);
+ console.log(str1); //immutable!!!불변!!!!!!!!
+ 
+ //○○○○○○○○○○split()   : 특정 구분자로 문자열을 나눈다. 리턴값은 배열.
+ var str4="http://test.com/board/list?pageno=0&page=3&count=10";
+
+ //아래와같이 출력하세염!
+//pageno:0
+//page:3
+//count:10
+
+var arr1 = str4.split("?");
+ console.log(arr1[0]);
+ console.log(arr1[1]);//arr1[1] > pageno=0&page=3&count=10 
+ 
+ console.log("↓↓↓↓↓↓＊여기부터다↓↓↓↓SPLIT   ★★★★")
+ var arr = str4.split("?")[1].split("&");
+ for(var i in arr){
+	 var kv=arr[i].split('=');
+	 console.log(kv[0],':',kv[1]);
+ }
+ 
+ //○○○○○○○○  indexOf(찾을 문자열, 시작점);
+ 
+var i =str4.indexOf('?');
+console.log(i);
+
+//lastIndexOf(찾을 문자열, 시작점);  거꾸로
+var i2=str4.indexOf('&');
+var i3=str4.lastIndexOf('&');
+console.log(i2,i3);
+
+console.log("----------------------------");
+//substr(시작인덱스, 개수);  //일부 문자열만 추출하고파용
+//substring(시작인덱스,끝인덱스);
+console.log(str4.substr(7,8));
+console.log(str4.substring(7,15));
+console.log(str4.slice(7,15));
+
+//대문자-> 소문자 변환   toLowerCase()
+//소문자-> 대문자 변환 toUpperCase()
+ var str5="Hello, World!";
+ console.log(str5.toLowerCase());
+ console.log(str5.toUpperCase());
+ </script>
+
+</body>
+</html>
