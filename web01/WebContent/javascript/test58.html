@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 처리 :KeyEvent</title>
+</head>
+<body>
+	<input id="input1" type="text">
+	<br>
+	<input id="input2" type="text">
+	<br>
+	<script>
+		"use strict";
+		var e2 = document.getElementById('input2');
+		  //change이벤트는 포커스를 잃었을떄 기본값과 다르면 이벤트 발생 //중복체크 시
+		document.getElementById('input1').onchange = function(event){
+			console.log(event.constructor);     //?
+		}
+		
+	 	document.getElementById('input1').onkeypress = function(event) {
+			console.log(event.constructor);
+			console.log(event.key);//DOM Level3 
+			console.log(event.code);//DOM Level3
+			console.log(event.char);//only ID
+			console.log(event.charCode);//deprecated
+			console.log(event.which);// ..
+			console.log(event.key);//.. 
+
+			if (event.keyCode == 13) {
+				//포커스를 input2로 옮겨!!!!!   this ->이번트가 발생된 객체
+				//this.blur();
+			
+				//브라우저야 input2 태그에 포커스를 줘라!!!
+				e2.focus();
+				
+				//이건 포커스 났을 때 callback!!  {}안에 것을 실행시켜!!!
+				//e2.onfocus=function(event){console.log('onfocus');};//클릭후
+			}
+	}
+ 
+	</script>
+
+</body>
+</html>

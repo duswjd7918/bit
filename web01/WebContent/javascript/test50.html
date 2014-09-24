@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Array()함수사용</title>
+</head>
+<body>
+	<script>
+		"use strict";
+	  var arr1=[100,200,300];
+	  var arr2=new Array();//   []   생성하자마자 호출
+	  var arr3=new Array(100,200,300);//첫번째꺼랑똑같
+	  
+	 console.log(arr1);
+	 console.log(arr2);
+	 console.log(arr3);
+	 
+	 console.log(arr1.constructor);
+	 console.log(arr2.constructor);
+	 console.log(arr3.constructor);
+	 
+
+	 console.log(arr1.length);
+	 //concat()  기존 배열에 파라미터들을 합친다   
+	 console.log(arr1.concat(400,500,600));
+	 
+	 //join():배열에 들어있는 값을 문자열로 만들어 리턴한다.
+	 console.log(typeof(arr1.join()));
+	 console.log("--------------------------------------");
+	 //pop()   : 마지막 인덱스의 값을 꺼낸다
+	 console.log(arr1.pop());
+	 console.log(arr1.pop())
+	  console.log(arr1);
+	 arr1.push(201);
+	 arr1.push(301);
+	 console.log(arr1);
+	   console.log("------------------------------------");
+	 //reverse():배열의 순서를 뒤집는다. 원본을 변경함
+		 console.log(arr1.reverse());
+	 console.log(arr1);
+	 console.log("------------------------------------");
+	 //slice() : 시작인덱스부터 끝인덱스 전까지 추출!!!
+	 arr1.push(1,2,3,4,5,6);
+	 console.log(arr1);
+	 console.log(arr1.slice(2,4));
+	 console.log("------------------------------------");
+	 //splice(시작,개수): 시작인덱스부터 개수만큼잘라 리턴(삭제)
+	 console.log(arr1.splice(2,4));
+	 console.log(arr1);
+	 console.log("------------------------------------");
+	 //sort():정렬
+	 console.log(arr1.sort());//항목을 문자열로 취급해 정려ㄹ
+	
+	 /* function mySort(v1,v2){
+		if(v1<v2) return -1;//음수리턴
+		else if(v1==v2) return 0;//0리턴
+		else return 1;//양수리턴
+	 }    //이따위껄로    전역변수를 만든다는건 아까비 ->익명함수
+	  console.log(arr1.sort(mySort));     */
+	 
+  console.log(arr1.sort(function(p1,p2){	
+	  if(p1<p2) return -1;//음수리턴
+	  else if(p1==p2) return 0;//0리턴
+	  else return 1;//양수리턴
+  }));
+	   console.log("------------------------------------");
+	  //forEach(콜백함수) :배열을 반복하면ㅅ 콜백함수를호출한다.
+	  //콜백함수(값,인덱스,배열)
+	  arr1.forEach(function(value){
+		  console.log(value);
+	  });
+	 </script>
+
+</body>
+</html>

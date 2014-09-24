@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>브라우저 객체들</title>
+</head>
+<body>
+	<script>
+		"use strict";
+//브라우저에게 제공하는 객체들
+//window <최상위객체임
+// L location
+// L navigator
+// L history
+// L screen
+// L document
+
+//window객체에 들어있는 모든값출력
+/* for(var key in window){
+	console.log(key, "--->",window[key]);
+	
+} */
+
+
+/* //open(url, 윈도우이름, 특징들...) :새창- 새탭...띄우깅
+window.open('http://www.google.com','w1',
+		'menubar = no,location=no,resizable=no, scrollbars=no,status=no'
+		                     + ' left=200,top=300,width=400,height=300'); */
+		                     
+/*  
+//setTimeout(callback, 밀리초) :지정된 시간이 경과하면 callback호출
+window.setTimeout(function(){
+	location.href="http://www.daum.net";
+},3000);
+ */
+ 
+ 
+ /*
+//setInterval(callback,밀리초):지정된 시간이 경과할때마다 callback호출!@
+window.setInterval(function(){
+	//document.body.innerHTML=new Date().toString();},1000);  
+	//Date 객체는.....날짜와 관련된 함수 넣긔
+	var today=new Date();
+  document.body.innerHTML=
+	 today.getFullYear() + '-'+
+  (today.getMonth() +1)+'-'+
+  today.getDate()+''+
+  today.getHours()+':'+
+  today.getMinutes()+':'+
+  today.getSeconds();              },1000);*/
+ 
+//window.moveTo(x,y) :특정 위치로 윈도우
+//window.moveBy(x,y) :현재위치에서 x, y만큼 이동!	
+var child= window.open('http://www.google.com','w1',
+		'left=0,top=0,width=300,height=200');
+		child.moveTo(100,100); //error
+		
+window.setInterval(function(){
+	window.moveBy(10,10);
+	},1000);
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>브라우저 객체들 - location  </title>
+</head>
+<body>
+	<script>
+		"use strict";
+
+		//브라우저에게 제공하는 객체들
+		//window <최상위객체임
+		// L location
+		// L navigator
+		// L history
+		// L screen
+		// L document
+		
+		for(var key in location){
+  console.log(key, "--->",location[key]);
+    }
+		
+		window.setTimeout(function(){
+			location.reload();// 현재페이지 refresh
+		},3000);
+	</script>
+
+</body>
+</html>
