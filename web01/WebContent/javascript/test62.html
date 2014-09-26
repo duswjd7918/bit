@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>캡쳐단계리스너등록</title>
+<!--전파 중지   =   bubbling ㄴㄴ라는 뜻임    ==부모로 버블 ㄴㄴ-->
+<style>
+div{
+border:1px solid red;
+margin:10px;
+}
+p{
+border:1px dashed blue;
+margin:10px;
+}
+span{
+border:2px solid black;
+}
+</style>
+</head>
+<body>
+<div id="d1">d1
+  <div id="d11">d11<p id="p1">비트<span id="s1">강남</span>교육센터</p></div>
+  <div id="d12">d12<p id="p2">비트<span id="s2">종로</span>교육센터</p></div>
+</div>
+<div id="d2">d2
+  <div id="d21">d21<p id="p3">비트<span id="s3">대전</span>교육센터</p></div>
+  <div id="d22">d22<p id="p4">비트<span id="s4">부산</span>교육센터</p></div>
+</div>
+
+	<script>
+		"use strict";
+		
+		//일반적인 방법으로 리스너를 등록하면,
+		//targeting phase 또는 bubbling phase에서 호출됨    
+		//capturing단계에서 호출되게 하려면 
+		//   ->  addEventListener()함수를 사용해 리스너 등록!
+	document.getElementById('d1').addEventListener('click',function(event){
+		console.log('d1......');
+		},true);//셋째 파라미터는 캡쳐단계에 등록할것인지 여부 지정
+		
+	document.getElementById('d11').addEventListener('click',function(event){
+	 console.log('d11......');
+	 },true);
+	
+
+	document.getElementById('s1').addEventListener('click',function(event){ console.log('(2)=>s111')});
+
+ </script>
+
+</body>
+</html>

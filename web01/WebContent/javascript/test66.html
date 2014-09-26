@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘레먼트만들기: 속성 추가</title>
+
+</head>
+<body>
+<input id='input1' type='text'><br>
+<p id='p1'></p>
+
+
+<script>
+		"use strict";
+var input1=document.getElementById('input1');
+var p1=document.getElementById('p1');
+
+//innerHTML:엘리먼트의 콘텐츠설정
+//     콘텐츠란,...? 시작태그와 끝내그 사이의 내용    element의세계에서...
+//value속성   " 폼 항목에 대해 값을 설정할때 사용
+
+//input.innerHTML='안되네...';   //nonono
+input1.value='오로하...바루 이거앗!';
+
+//p1.value='안되넹...';//<p>는 폼의 항목이 아니었규
+p1.innerHTML = '아핫   이렇게 값을 설정하는거군!';
+</script>
+
+</body>
+</html>
