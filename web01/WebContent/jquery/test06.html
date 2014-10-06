@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>load event5</title>
+<script src='jquery-1.11.1.js'></script>
+<script>
+/*
+ready()의 축약법:
+	=>  $(함수객체);
+ */
+
+
+$(document).ready(function() {     //1ㅂㅂ ㅏ 
+	alert("1111");			
+});
+ 
+ 
+$(function(){
+	alert('22222');
+	
+});//야 제이쿼리 돔트리 완성후 이거 시켜
+
+
+
+$(document).ready(function() {  
+	alert("33333333333");		
+		
+});
+	
+	$(function(){
+		alert('444444');
+		
+	})
+	
+	
+</script>
+
+</head>
+<body>
+	<button id='btn1'>버튼1</button>
+	<div id='formDiv' style='display: none;'>
+		<form>
+			이름: <input type='text' name='name'><br>
+			 나이: <input	type='text' name='age'><br>
+		</form>
+	</div>
+</body>
+
+</html>

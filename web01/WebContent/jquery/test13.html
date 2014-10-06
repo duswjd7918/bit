@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>selector</title>
+<script src='jquery-1.11.1.js'></script>
+<script>
+/* 속성으로 태그찾기
+ * CSS 문법: 태그명[속성명=값]
+
+ */
+
+$(function(){
+	
+	//type속성이  radio인 태그 찾기
+/* 	$('input[type=radio]').each(function(index,originalElement){
+		console.log($(originalElement).val());
+	}); */
+	
+	
+	//pseudo 셀렉터(필터) 사용하여  태그찾기
+	//input:슈도셀렉터
+/* 	//슈도셀렉터:  button, checkbox, file, image, password, radio,submit, reset,text...
+	$('input:checkbox').each(function(index,originalElement){
+		console.log($(originalElement).val());
+	});
+});
+ */
+	//입력 항목의 상태로 태그 선택
+	//상태 ->  checked, disabled, enabled, focus, input(모든 폼항목: input select button textarea),selected
+ /*  //문제: 버튼 누르면~~~~check된 항목의 값을 출력하라!
+  $('#btn1').click(function(){ 
+	  //radio  or   checkbox에 대해 선택된 태그를 찾는다.
+	  $('input:checked').each(function(i,e){    // ★★
+		  console.log($(e).val());
+		  
+     })
+  }); */
+	
+	
+	  $('#btn1').click(function(){ 
+		 /*  문제 :  select항복의 값을 알아내기!
+		    $('#s1 option:selected').each(function(i,e){
+			  console.log($(e).val());		   }) 
+			  
+			  //select의 옵션중에서 사용자가 선택한 옵션 값 알아내기!!! 이게 더 좋네 > . <!!!
+			  console.log($('#s1').val());*/
+	   
+			  
+		//  문제: 사용자가 선택한 성별을 알아내기~
+	   console.log($('input[name=gender]:checked').val());
+	   
+	  
+	  });
+});
+</script>
+
+</head>
+<body>
+<button id='btn1'>테스트</button>
+<form>
+<input type='text'><br>
+<input type='password'><br>
+<input type="checkbox" value='CHOCOLATE'>초코렛<br>
+<input type="checkbox">토마토파스타<br>    <!--value가 읎으닊까  기본 default값은 on -->
+<input type='radio' value='남자' name='gender'>남자
+<input type='radio' value='여자' name='gender'>여자
+<input type='radio' value='아저씨' name='gender'>아저씨<br>
+<input type='radio' value='재직중' name='working'>재직중
+<input type='radio' value='미취업' name='working'>미취업<br>
+사귀고있는 이성친구수<select id='s1'>
+  <!-- option태그의 기본값은  콘텐츠다!!!!!!!! -->
+	<option value='1'>1명</option>   <!-- 1 -->
+	<option value='2'>2명</option>   <!-- 2 -->
+	<option>35477명</option>          <!-- 35477명 -->
+	<option>4000명</option>           <!-- 4000명 -->
+</select>
+
+</form>
+</body>
+
+</html>

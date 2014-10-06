@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>selector</title>
+<script src='jquery-1.11.1.js'></script>
+<script>
+/*    태그의 위치로 찾기!
+ *   위치:odd, even, first, last
+ 
+ */
+$(function(){
+	//문제-  홀수 index  tr태그를 찾아서 배경색을 red로 지정하라~
+	$('tr:odd').css('background-color','lightgray');   //♥
+	//문제- 첫번째 tr태그의 배경을 파란색, 폰트는 흰색으로 설정하라~
+	$('tr:first').css('background-color','blue').css('color','white');
+});
+</script>
+
+</head>
+<body>
+
+<table border="1">
+	<tr>
+		<th>번호(0)</th>
+		<th>이름</th>
+		<th>전화</th>
+	</tr>
+	<tr>
+		<th>1</th>
+		<th>배연정1</th>
+		<th>01062507818</th>
+	</tr>
+	<tr>
+		<th>2</th>
+		<th>배연정2</th>
+		<th>01062507818</th>
+	</tr>
+	<tr>
+		<th>3</th>
+		<th>배연정3</th>
+		<th>01062507818</th>
+	</tr>
+	<tr>
+		<th>4</th>
+		<th>배연정4</th>
+		<th>01062507818</th>
+	</tr>
+	<tr>
+		<th>5</th>
+		<th>배연정5</th>
+		<th>01062507818</th>
+	</tr>
+	<tr>
+		<th>6</th>
+		<th>배연정6</th>
+		<th>01062507818</th>
+	</tr>
+	<tr>
+		<th>7</th>
+		<th>배연정7</th>
+		<th>01062507818</th>
+	</tr>
+	<tr>
+		<th>8</th>
+		<th>배연정8</th>
+		<th>01062507818</th>
+	</tr>
+	<tr>
+		<th>9</th>
+		<th>배연정9</th>
+		<th>01062507818</th>
+	</tr>
+	<tr>
+		<th>10</th>
+		<th>배연정10</th>
+		<th>01062507818</th>
+	</tr>
+
+</table>
+</body>
+
+</html>

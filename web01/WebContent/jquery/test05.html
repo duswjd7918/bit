@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>load event4</title>
+<script src='jquery-1.11.1.js'></script>
+<script>
+/*
+ 호출순서
+ DOM트리가 완선된 후 다음 순서로 호출된
+ 1.ready()로 등록된 함수가 순서대로 호출된다.
+ 2. onload 리스너 함수가  호출된다.
+ */
+
+
+$(document).ready(function() {     //1ㅂㅂ ㅏ 
+	alert("1111");		
+	
+	
+});
+	//DOM트리가 완성된  로드 이벤트 발생
+	window.onload = function(event) {     //3빠
+		//웹페이지를 초기화하는 코드를 작생해 넣는다 ! 
+
+	alert("3333333333");
+	}
+	
+	
+	$(document).ready(function() {    //2빠  
+		alert("222222222222");		
+		
+		
+	});
+	
+</script>
+
+</head>
+<body>
+	<button id='btn1'>버튼1</button>
+	<div id='formDiv' style='display: none;'>
+		<form>
+			이름: <input type='text' name='name'><br>
+			 나이: <input	type='text' name='age'><br>
+		</form>
+	</div>
+</body>
+
+</html>

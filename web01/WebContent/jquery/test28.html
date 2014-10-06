@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트 이동하기ㅣ</title>
+<style>
+.selected {
+	background-color: blue;
+	color: white;
+}
+
+.head {
+	background-color: black;
+	color: white;
+}
+
+.no {
+	background-color: yellow;
+}
+</style>
+
+<script src='jquery-1.11.1.js'></script>
+<script>
+
+/* clone()=>선택된 객체를 복제한다!  도배하기
+ */
+$(function(){
+	setInterval(function(){
+	$('img:first').clone().appendTo('body');
+	},1000);
+});
+</script>
+
+</head>
+<body>
+<img src='image1.jpg' width='150'>
+<img src='image2.jpg' width='150'>
+<img src='image3.jpg' width='150'>
+<img src='image6.jpg' width='150'>
+<img src='image5.jpg' width='150'>
+</body>
+
+</html>

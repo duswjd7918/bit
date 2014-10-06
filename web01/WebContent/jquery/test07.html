@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>selector</title>
+<script src='jquery-1.11.1.js'></script>
+<script>
+/* 1. 태그 이름으로 대상 선택하기
+ $(CSS 셀렉터 문법)=> 리턴: jQuery함수가 만든 배열.
+ 												배열안에 엘리먼트가 들어있다!
+ 									=> CSS 셀렉터 문법: #아이디, 태그명, .클래스명,
+ 									xxx:슈도 셀렉터 등...
+ 												
+*/
+$(function(){
+	//태그 이름으로 선택하기!
+	//each(콜백함수):jQeury 리객체에 들어있는 엘리먼트 개수만큼 
+	//								반복하면서&컬백함호출@ ★★★
+	//콜백함수 문법: function(인덱스, 오리지널 엘리먼트)()
+	$('h1').each(function(index, element){
+		console.log(index, element.innerHTML);//element= h1 eleme!
+	  /* console.log(index, element.html());
+		ERROR@    파라미터 element는 jQuery가 만든 객체가 아니라
+		오리지널 엘리먼트 이기 때문이다. 
+	 */
+	 //오리지널 엘리먼트를 jQuery()로 가공한 담에 html사용할수잇당
+   console.log(index, $(element).html());
+	});
+});
+
+	
+</script>
+
+</head>
+<body>
+	<h1>제목1</h1>
+	<p>내용..1.</p>
+	<h1>제목2</h1>
+	<p>내용...2</p>
+	<h1>제목3</h1>
+	<p>내용...3</p>
+	<h1>제목4</h1>
+	<p>내용...4</p>
+	<h1>제목5</h1>
+	<p>내용...5</p>
+</body>
+
+</html>

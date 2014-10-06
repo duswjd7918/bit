@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>eq(), first(),last() 함수 사용법을 배워보자   ^*^ </title>
+<script src='jquery-1.11.1.js'></script>
+
+<!-- 
+eq(인덱스) : 지정된 인덱스 객체선택
+
+
+ -->
+
+<script>
+	$(function() {
+		//(1)셀렉터를 사용하여 xmr정 인덱스의 객체선택 
+				$('tr:eq(3)').css({
+					'background-color':'blue',
+					'color':'white'
+					
+				});
+	 //(2) jQuery에서 제공하는 eq()함수 사용하여 특정 인덱스의 객체선택 
+	 $('tr').first().css({
+		 'background-color':'black',
+			'color':'white'		 
+	 })
+	 
+	  $('tr').last().css({
+		 'background-color':'darkgray',
+			'color':'white'		 
+	 })
+	 
+	 
+});
+</script>
+
+</head>
+<body>
+
+	<table border="1">
+		<tr class='head'>
+			<th>번호(0)</th>
+			<th>이름</th>
+			<th>전화</th>
+		</tr>
+		<tr>
+			<td class='no'>1</td>
+			<td><a href='mailto:test1@test.com'>배연정1</a></td>
+			<td>01062507818</td>
+		</tr>
+		<tr>
+			<td class='no'>2</td>
+			<td><a href='mailto:test2@test.com'>배연정2</a></td>
+			<td>01062507818</td>
+		</tr>
+		<tr>
+			<td class='no'>3</td>
+			<td><a href='mailto:test3@test.com'>배연정3</a></td>
+			<td>01062507818</td>
+		</tr>
+		<tr>
+			<td class='no'>4</td>
+		<td><a href='mailto:test4@test.com'>배연정4</a></td>
+			<td>01062507818</td>
+		</tr>
+		<tr>
+			<td class='no'>5</td>
+			<td><a href='mailto:test5@test.com'>배연정5</a></td>
+			<td>01062507818</td>
+		</tr>
+		<tr>
+			<td class='no'>6</td>
+			<td><a href='mailto:test6@test.com'>배연정6</a></td>
+			<td>01062507818</td>
+		</tr>
+		<tr>
+			<td class='no'>7</td>
+			<td><a href='mailto:test7@test.com'>배연정7</a></td>
+			<td>01062507818</td>
+		</tr>
+		<tr>
+			<td class='no'>8</td>
+			<td><a href='mailto:test8@test.com'>배연정8</a></td>
+			<td>01062507818</td>
+		</tr>
+		<tr>
+			<td class='no'>9</td>
+			<td><a href='mailto:test9@test.com'>배연정9</a></td>
+			<td>01062507818</td>
+		</tr>
+		<tr>
+			<td class='no'>10</td>
+			<td><a href='mailto:test10@test.com'>배연정10</a></td>
+			<td>01062507818</td>
+		</tr>
+
+	</table>
+</body>
+
+</html>
