@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>mini_main</title>
+  
+ 	  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="snow.js"></script> 
+    <style type="text/css">
+            body {/*  background: pink; */
+            background: url('./dotted.png'); }
+    </style>
+        
+        
+    <!-- 글씨체 초기화 -->
+    <link href="http://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet" />
+    <!-- 초기화 -->
+    <style>
+        * { margin: 0; padding: 0; }
+        body { font-family: 'Times New Roman', serif; 
+        				font-size: large;}
+        li { list-style: none; }
+        a { text-decoration: none; }
+       
+    </style>
+  
+    <style>
+        #main_header {
+            /* 중앙 정렬*/
+            width: 960px; margin: 0 auto;
+            /* 절대 좌표 */
+            height: 160px;
+            position: relative;
+        }
+        #main_header > #title {
+            position: absolute;
+            left: 20px; top: 30px;
+        }   
+    </style>
+  
+    
+    <!-- 타이틀 -->
+    <style>
+        #title {
+            font-family: 'Henny Penny', cursive; 
+            font-size: 3em;
+        }
+        #title > main_lnb{
+        			font-family: 'Henny Penny', cursive; 
+        }
+    </style>
+
+    <!-- part 3 -->
+    <style>
+        #main_lnb > ul { overflow: hidden; }
+        #main_lnb > ul > li { float: middle; padding :100px 30px 30px 30px; }
+        #main_lnb > ul > li > a {
+            display: block;
+            padding: 20px 20px 20px 300px;
+            border: 5px solid white;
+            height: 100px;
+            width: 500px;
+            font-size:300%;
+        }
+        #main_lnb > ul > li > a:hover {
+            background: white;
+            color: purple;
+            font-size:400%;
+          
+        }
+        #main_lnb > ul > li:first-child > a { border-radius: 10px; }
+        #main_lnb > ul > li:nth-child(2n) > a { border-radius: 10px; }
+        #main_lnb > ul > li:last-child > a  { border-radius: 10px; }
+    
+    
+    </style>
+  
+</head>
+
+
+<body>
+    <header id="main_header">
+        <h4 id='title' > ♥♥♥♥ Kitty Game Set ♥♥♥♥</h4> <hr>
+
+        <nav id="main_lnb">
+            <ul>
+                <li><a href="./part1.html">심리테스트</a></li>
+                <li><a href="./part2.html">광클릭게임</a></li>
+                <li><a href="./part3.html">우리말맞추기</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+   <!-- 요 밑에는 찻페이지바탕화면 -->
+  <script type="text/javascript"> 
+	$(function() {
+ 	   $(document).snow({ SnowImage: "kitty.png" });
+		});
+</script>
+</body>
+</html>

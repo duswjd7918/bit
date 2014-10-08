@@ -1,0 +1,152 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>마우스 빨리 누르기</title>
+
+</head>
+<style>
+body {
+	background: url('./kitty2.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	margin: 0;
+	padding: 100px;
+}
+
+button {
+	font-size: 1.5em;
+}
+
+
+</style>
+<body>
+
+<script type="text/javascript">
+
+		var n = 10;
+		var score = 0;
+		var high = 0;
+		var start = 0;
+
+		function clearText(field) {
+			if (field.defaultValue == field.value)
+				field.value = "";
+
+		}
+		//초기
+		function init() {
+			start = 1;
+			st = new Date();
+			sec = st.getTime();
+			n = 10;
+			score = 0;
+			document.f.score.value = score;
+			game();
+		}
+		//겜진행중ㅇㅇ
+		function game() {
+			setTimeout("game()", 1);
+			now = new Date();
+			sec1 = now.getTime();
+			n = parseInt((sec1 - sec) / 1000);
+			n = 10 - (n % 60);
+			if (n <= 0) {
+				start = 0;
+				n = 0;
+			}
+			document.f.cdown.value = n;
+
+		}
+		function add() {
+			now = new Date();
+			sec1 = now.getTime();
+			n = parseInt((sec1 - sec) / 1000);
+			n = 10 - (n % 60);
+			document.f.cdown.value = n;
+			if (n <= 0) {
+				start = 0;
+				n = 0;
+				document.f.cdown.value = 0;
+
+			}
+
+			if (start == 0) {
+				score = score;
+			} else {
+				score = score + 1;
+			}
+			document.f.score.value = score;
+
+		}
+</script>
+
+	<center>
+		<table width="750" border="0" cellspacing="2" cellpadding="2">
+			<tr>
+				<td align="center" height="30" bgcolor="#6495ed"><font size="5"
+					color="white"> ** 게임 설명 ** </font></td>
+			</tr>
+			<tr>
+				<td bgcolor="cornsilk">1. 10초 동안 마우스를 최대한 빨리 눌러보세요. <br>
+				<br> 2. [시작]을 누르고 오른쪽의 버튼을 최대한 빨리 누르면 됩니다. <br>
+				<br> 3. 과연 여러분은 10초 동안에 몇 번이나 누를 수 있을까요? <br>
+				 &nbsp;&nbsp;&nbsp; 50개는 넘어야 평균이고, 80개면 매우 빠른 겁니다. 저는 90개
+					나왔네요! ^.^V<br><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;★키보드 사용은 금지에요!! only 마우스!★
+					
+				</td>
+			</tr>
+		</table>
+	</center>
+
+	<br>
+	<br>
+	<br>
+
+	<center>
+		<form name="f">
+		   <input type="text" id="name" value="이름을 입력하세요!" onFocus="clearText(this)"> <br><br>
+			  카운트 다운(10초): <input size=2 name="cdown" id=cdown><br><br><br>
+		    점수 (클릭 횟수) : <input size=5 name="score" id="score"> <br><br><br>
+		  
+				<input type="button"	value="시작버튼을 누른 후" onclick="init()"> 
+				<input type="button" value="여기를 빨리 눌러요." onclick="add()"><br><br><br>
+			  <button id='btnAdd' type='button' >기록표에 추가</button>
+		</form>
+	</center>
+
+	<h1>기록표</h1>
+	<table id='boardTable' border='1' width="500">
+		<tr>
+			<th>번호</th>
+			<th>이름</th>
+			<th>점수</th>
+		</tr>
+		
+		<tr >
+		</tr>
+		
+		<tr >			
+		</tr>
+		
+		<tr>
+		</tr>
+	</table>
+
+
+<div id="layer1" style="position:absolute; left:800px; top:300px; width:100px; height:100px; z-index:1; border-width:1px; border-style:none;">
+<a href="./main.html"> <img src='./speech.png' id='speech' ></a></div>
+
+<div id="layer2" style="position:absolute; left:820px; top:383px; width:300px; height:100px; z-index:1; border-width:5px; font-size:1.8em; ">
+<a href="./main.html">다른게임할래?</a></div>
+
+
+
+	<!-- 목표: 자바스크립트와 HTML 소스 분리 -->
+	<script src='part2_common.js'></script>
+	<script src='part2.js'></script>
+
+
+
+</body>
+</html>

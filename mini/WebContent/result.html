@@ -1,0 +1,109 @@
+<!doctype html>
+ <html lang="KO">
+ <head>
+ <meta charset="UTF-8">
+ <title> tabs</title>
+
+<style type="text/css">
+body { 
+  background:url('./kitty1.jpg');
+  background-repeat: no-repeat;
+  background-size:100%;
+  
+  margin: 0; 
+}
+
+ #menu { width:800px; height:100px; list-style:none;  margin:20px auto; padding:0px;   }
+ #menu li { width:199px; height:71px; margin:0px; padding:0px; border-left:1px solid gray;
+ text-align:center; line-height:30px; cursor:pointer; font-size:4em; font-weight:bold;padding-top:50px; background-color:#eeeeee; float:left; border-radius: 20px;} 
+ #menu li:first-child { width:200px; border-left:0px; background-color:#F30EAA; border-radius: 20px;} 
+
+
+ #box { width:800px; height:auto; margin:20px auto; }
+ #box div { width:100%; font-size:30px; display:none; border-radius: 20px; padding:15px;  border:10px dashed #F30EAA;}
+ #box div:first-child { display:block; }
+ 
+ </style>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+$("#menu li").click(function(){  // 메뉴 클릭시...
+     $("#menu li").css("background-color","#eeeeee");  // 모든 메뉴 배경색 기본색으로 지정
+     $(this).css("background-color","#F30EAA");  // 클릭한 메뉴 배경색 녹색으로 지정
+     $("#box div").css("display","none");  // 모든 하단메뉴 감추기
+     $("#box div:eq("+$(this).index()+")").css("display","block"); // 클릭한 메뉴의 해당 하단메뉴 보이기
+ });
+});
+ </script>
+
+</head>
+ <body>
+
+<ul id="menu">
+      <li>A 타입</li><li>B 타입</li><li>C 타입</li><li>D 타입</li>
+</ul>
+
+<div id="box">
+     <div style="height:440px; width:750px; background-color:white;"> 
+         <p>
+    <h4>옛 연인과 친구처럼 안부 인사를 나눈다.</h4>
+   당신은 애인 한 명으로 만족을 못하는 군, 기회가 된다면 <br> 
+   바람을 피우고 싶어하는 타입! 연애는 스릴 있게 하고 싶고 <br>
+   열정이 식으면 바로 다시 시들시들 해 버리는 당신이랍니다.<br> 
+   그렇기 때문에 당신은 무의식중에 내뱉은 말로 상대에게 <br>
+   상처를 안겨주네요..나중에 후회할 수 있는 결과가 생길 수 <br>
+   있습니다. 이젠 끈기있게 열정적인 사랑을 해봐야 하지 <br>
+   않을까요? 후회할 일을 눈덩이 처럼 만들기 전에 치웁시다^^
+    </p>
+     </div>
+     <div style="height:440px; width:750px;background-color:white;"> 
+      <p>
+    <h4>애인을 기다리고 있다고, 말을 한 후 보낸다.</h4>
+    당신은 이성에게 인기가 많은 아주 친절한 타입이죠! 원하는<br> 
+    상대가 나타나면 뜻을 내 것으로 만들 수 있는 연애의 달인? <br>
+    쯤으로 분류가 가능하겠군요ㅋㅋ애인과 연락이 잘 안되거나<br>
+    슬픈일이 생겨도 별로 집착하지 않고, 사랑이 쫑나면 다른 <br>
+    사람에게 빠르게 마음을 주어 만나는 편이랍니다.이런 면 <br>
+    때문에 헤어질때 상대방에게 상처를 많이 줄거에요. 이별을<br>
+    한 후 완전 남남이 되어 버린다 해도, 상대방에게 끝까지 <br>
+    예의를 지키는 매너는 챙길 수 있죠?
+    </p>
+      </div>
+     <div style="height:440px;width:750px; background-color:white;"> 
+       <p>
+    <h4>대충 말하고 바쁜 척 피하고 만다.</h4>
+    당신은 좋아하는 상대가 있다면 꼭! 독차지를 해야만 <br>
+    안심하는 타입이군요, 사랑 한 번 빠지면 속속히 다 꿰고<br>
+    있는 가까움이 필요하다고 생각하죠~ 연인에게 최선을 <br>
+    다하고 헌신해요, 그리고 상대도 그러길 바라죠. 하지만<br>
+    대놓고는 요구를 못하니 죽을 지경..ㅠ 상대도 죽을지경!! <br>
+    그런점들은 상대를 지치게하고 상처를 줄 수 있답니다. <br>
+    지속된다면 사랑은 깨지기마련, 집착과 사랑하는 마음을 <br>
+    구분지어 볼까요?
+    </p>
+     </div>
+     
+      <div style="height:440px; width:750px;background-color:white;"> 
+     <p>
+    <h4>전화 하는 척, 등돌리고 모른 척 외면한다.</h4>
+    당신은 연인이 생기면 하루 종~일 같이 있고 싶어하는 타입! <br>
+    전화통화가 잘 안되면 그걸로도 스트레스를 받곤하죠, <br>
+    홧김에 잠수를 타거나 연락을 끊어 버려서 상대를 어이없게 <br>
+    상처를 줄 수도 있는 당신! 불만이 있다면 솔직하게 말로 <br>
+    풀어버리는게 더 현명한 방법인것 같아요~ 당신의 마음을 <br>
+    말로 표현하지 않는다면 누구도 알 수 없으니깐요, 제발 <br>
+    솔직하게 당신의 마음을 대화로 표현해 보는건 어떤가요? 
+    </p>
+     </div>
+</div>
+
+
+<div id="layer1" style="position:absolute; left:550px; top:550px; width:100px; height:100px; z-index:1; border-width:1px; border-style:none;">
+<a href="./main.html"> <img src='./speech.png' id='speech' ></a></div>
+
+<div id="layer2" style="position:absolute; left:570px; top:633px; width:300px; height:100px; z-index:1; border-width:5px; font-size:1.8em; ">
+<a href="./main.html">다른게임할래?</a></div>
+
+ </body>
+ </html>

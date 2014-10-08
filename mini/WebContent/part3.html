@@ -1,0 +1,166 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="snow.js"></script>
+
+<style type="text/css">
+body {
+	background: url('./kitty3.jpg');
+	background-repeat: no-repeat;
+	background-position: right top;
+	margin-left: 20;
+	font-size:75%;
+}
+ #score{
+            width: 500px; margin: 0 auto;
+            height: 100px;
+            position: relative;
+            background-color: pink;
+           	font-size:5em; 
+           
+        }
+</style>
+
+<script language="javascript">
+
+function chkP1() {
+    if(document.all["p1"][0].checked) {alert('정답입니다.');}
+    else if(document.all["p1"][1].checked) {alert('틀렸습니다.');}
+    else {alert('문제를 푸세요.');}}
+    
+function chkP2() {
+    if(document.all["p2"][1].checked) {alert('정답입니다.');}
+    else if(document.all["p2"][0].checked) {alert('틀렸습니다.');}
+    else {alert('문제를 푸세요.');}}
+    
+function chkP3() {
+    if(document.all["p3"][1].checked) {alert('정답입니다.');}
+    else if(document.all["p3"][0].checked) {alert('틀렸습니다.');}
+    else {alert('문제를 푸세요.');}}
+    
+function chkP4() {
+    if(document.all["p4"][0].checked) {alert('정답입니다.');}
+    else if(document.all["p4"][1].checked) {alert('틀렸습니다.');}
+    else {alert('문제를 푸세요.');}}
+    
+function chkP5() {
+    if(document.all["p5"][1].checked) {alert('정답입니다.');}
+    else if(document.all["p5"][0].checked) {alert('틀렸습니다.');}
+    else {alert('문제를 푸세요.');}}
+    
+function chkP6() {
+    if(document.all["p6"][1].checked) {alert('정답입니다.');}
+    else if(document.all["p6"][0].checked) {alert('틀렸습니다.');}
+    else {alert('문제를 푸세요.');}}
+    
+function chkP7() {
+    if(document.all["p7"][0].checked) {alert('정답입니다.');}
+    else if(document.all["p7"][1].checked) {alert('틀렸습니다.');}
+    else {alert('문제를 푸세요.');}}
+    
+function chkP8() {
+    if(document.all["p8"][0].checked) {alert('정답입니다.');}
+    else if(document.all["p8"][1].checked) {alert('틀렸습니다.');}
+    else {alert('문제를 푸세요.');}}
+    
+function chkP9() {
+    if(document.all["p9"][1].checked) {alert('정답입니다.');}
+    else if(document.all["p9"][0].checked) {alert('틀렸습니다.');}
+    else {alert('문제를 푸세요.');}}
+    
+function chkP10() {
+    if(document.all["p10"][0].checked) {alert('정답입니다.');}
+    else if(document.all["p10"][1].checked) {alert('틀렸습니다.');}
+    else {alert('문제를 푸세요.');}}
+
+
+
+
+
+function mark() {
+    var cnt=0;
+    if (document.all["p1"][0].checked) cnt+=1;
+    if (document.all["p2"][1].checked) cnt+=1;
+    if (document.all["p3"][1].checked) cnt+=1;
+    if (document.all["p4"][0].checked) cnt+=1;
+    if (document.all["p5"][1].checked) cnt+=1;
+    if (document.all["p6"][1].checked) cnt+=1;
+    if (document.all["p7"][0].checked) cnt+=1;
+    if (document.all["p8"][0].checked) cnt+=1;
+    if (document.all["p9"][1].checked) cnt+=1;
+    if (document.all["p10"][0].checked) cnt+=1;
+    msg="총 점수 : "+(cnt*10)+"\n맞은 갯수 : "+(cnt)+"\n틀린 갯수 : "+(10-cnt);
+    alert(msg);
+}
+
+</script>
+</head>
+<body>
+<table>
+<tr>
+
+<h3>1) 내가 너보다 더 (___) 생각하지 않니?</h3>
+<input type=radio name=p1>(ㄱ) 낫다고<br>
+<input type=radio name=p1>(ㄴ) 낳다고<br>
+<input type=button value="정답" onclick="chkP1()">
+
+<h3>2) (___) 강남역에서 만나자 ^-^</h3>
+<input type=radio name=p2>(ㄱ) 있다가<br>
+<input type=radio name=p2>(ㄴ) 이따가<br>
+<input type=button value="정답" onclick="chkP2()"><br>
+
+<h3>3) 우표를 편지봉투에 (___).</h3>
+<input type=radio name=p3>(ㄱ) 부치다<br>
+<input type=radio name=p3>(ㄴ) 붙이다<br>
+<input type=button value="정답" onclick="chkP3()"><br>
+
+<h3>4)  (___) 오늘따라 기분이 안좋아.....ㅜㅜ</h3>
+<input type=radio name=p4>(ㄱ) 왠지<br>
+<input type=radio name=p4>(ㄴ) 웬지<br>
+<input type=button value="정답" onclick="chkP4()"><br>
+
+<h3>5) 니가 나한테 (_
+<font color=black;>__) 그럴 수</font>
+ 있니?!!!!!! - _-</h3>
+<input type=radio name=p5>(ㄱ) 어떡해<br>
+<input type=radio name=p5>(ㄴ) 어떻게<br>
+<input type=button value="정답" onclick="chkP5()"><br>
+
+
+
+<h3>6) 5월  매출목표  (___)은 102.4%입니다. </h3>
+<input type=radio name=p6>(ㄱ) 달성율<br>
+<input type=radio name=p6>(ㄴ) 달성률<br>
+<input type=button value="정답" onclick="chkP6()"><br>
+
+<h3>7)오늘 우리반은 옆반과 축구경기를 (____).</h3>
+<input type=radio name=p7>(ㄱ) 치렀다<br>
+<input type=radio name=p7>(ㄴ) 치뤘다<br>
+<input type=button value="정답" onclick="chkP7()"><br>
+
+<h3>8) 이거 먹으면 (___)? ㅠㅠ </h3>
+<input type=radio name=p8>(ㄱ) 안돼요<br>
+<input type=radio name=p8>(ㄴ) 안되요<br>
+<input type=button value="정답" onclick="chkP8()"><br>
+
+<h3>9) 옷을 (____) 입었잖아!!!!</h3>
+<input type=radio name=p9>(ㄱ) 꺼꾸로<br>
+<input type=radio name=p9>(ㄴ) 거꾸로<br>
+<input type=button value="정답" onclick="chkP9()"><br>
+
+<h3>10) 그는 속마음을 (___)냈다.</h3>
+<input type=radio name=p10>(ㄱ) 드러<br>
+<input type=radio name=p10>(ㄴ) 들어<br>
+<input type=button value="정답" onclick="chkP10()"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<input type=button id='score' value="점 수" onclick="mark()">
+</table>
+
+</body>
+</html>
