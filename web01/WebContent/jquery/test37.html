@@ -20,19 +20,25 @@ border:1px solid red;
  */
 
 $(function(){
-		$('#d1').mouseenter(function(event){
-			console.log("mouseetner");
+		$('#d1').mouseenter(function(event){    //img랑 div 랑 독립적이야!!!!
+			console.log("mouseetner");    
 			
 		})			 .mouseleave(function(event){
 			console.log("mouseleave");
 		});
-		$('#d1').mouseover(function(event){
+		
+		
+		
+		
+		$('#d1').mouseover(function(event){    //img랑 div 겹쳐겹
 			console.log("mouseover");
 			
 		})			 .mouseout(function(event){
 			console.log("mouseout");
 		})
-						
+		
+		
+		
 		$('#img1').mouseover(function(event){
 			event.stopPropagation();
 		}).mouseout(function(event){
