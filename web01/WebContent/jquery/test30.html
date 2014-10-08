@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트리스너 등록</title>
+
+
+<script src='jquery-1.11.1.js'></script>
+<script>
+
+/* bind()  이벤트 리스너 등록하는 함수얌
+*   $().bind(이벤트명); //모~~든 리스너 제거
+*   $().bind(이벤트명,함수);  //특정 리스너 만  제거
+*   $().bind({이벤트명:함수, 이벤트명:함수, ...});
+*/
+
+
+//ready 이벤트 리스너 등록의 단축 표기법!
+var listener1,listener2,listener3;
+$(function(){
+	$('#img1').bind('click', listener1=function(event){//계속호출될함수를 묶엉
+		console.log('1111');})
+	$('#img1').bind('click', listener2=function(event){
+		console.log('2222');})
+	$('#img1').bind('click', listener3=function(event){
+		console.log('3333');})
+		//나중에 선택적으로 제거하기위해  변수에 함수 넣는거얌
+		//문제:버튼을 클릭하면 listener2를 이벤트 리스너 목록에서 제거!
+	$('#btn1').bind('click',function(event){
+		//특정 리스너만 해제하기~
+		//$('#img1').unbind('click',listener2);
+		//이번트리스너에 등록된 모든 리스너가해ㅈㅔㅔ
+	    $('#img1').unbind('click');
+	});
+	
+});
+	
+	
+
+</script>
+
+</head>
+<body>
+<button id='btn1'>이벤트처리해제!!</button><br>
+<img id='img1' src='image1.jpg' width='150'>
+<img id='img2' src='image2.jpg' width='150'>
+<img id='img3' src='image3.jpg' width='150'>
+</body>
+
+</html>

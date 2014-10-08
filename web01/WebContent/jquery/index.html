@@ -1,0 +1,185 @@
+<!-- 
+1.4칸 타일 블럭 생성
+2.셀에 마우스커서가 잇을때 색상변경
+3.임의 버튼 클릭시  세칸 중에 두칸을 색상변경
+4.색상 변경 2초 후, 다시 원래 색상으로!
+5.임의의  버튼 클릭 시 랜덤으로 두칸 색상 변경
+6.사용자가 칸 클릭  시 파란색 색상으로 변경
+7.답이 아닌 칸 클릭 시빨강색변경
+8.뺠간색 대신 X이미지로 배경변경
+9.마지막 칸 클릭 시 정답이면 V이미지로 배경변경~
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클래스 추가/삭제</title>
+<style>
+
+table {
+  width: 350px;
+  height: 350px;
+}
+td {
+  width: 100px;
+  height: 100px;
+  
+}
+ 
+.letter-v {
+  background-image:
+    url(http://images.gofreedownload.net/letter-v-29447.jpg);
+}
+ 
+.letter-x {
+  background-image:
+    url(https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/17-128.png);
+}
+ 
+.letter-o {
+background-image:
+    url(http://www.veryicon.com/icon/png/System/Red%20Orb%20Alphabet/Letter%20O.png);
+}
+.divOn {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  background: blue;
+ 
+}
+ 
+</style>
+ 
+<script src='jquery-1.11.1.js'></script>
+<script>
+  
+  $(function() {
+    var arr=[];
+    var tdL =[];
+    
+    $('#btnStart').click(function(){
+      
+      for(var i=0;i<2;i++){ 
+      arr[i] = Math.floor(Math.random()*4);
+    		if(arr[i]==arr[i-1]){  
+    			while(arr[i]!=arr[i-1]){
+ 	   		 		arr[i] = Math.floor(Math.random()*4);
+    			}
+   		 	}
+      }
+ 
+      for(var i=0;i<arr.length;i++){
+        if($('td').eq(arr[i]).hasClass('divOn')){
+          $('td').eq(arr[i]).removeClass('divOn');
+        }
+        else{
+          $('td').eq(arr[i]).addClass('divOn').addClass('compare');
+            setInterval(function(){
+            $('td').removeClass('divOn');
+          },2000) 
+        
+        }//else 
+      }//for
+      
+      
+      
+      
+    });
+    
+    $('td').hover(function(event){
+       //$(this).css('background-color','pink');
+      var element = $(this);
+      
+      if(element.hasClass('selected')){
+        $(this).css('background-color','purple');
+        
+      } else {
+        $(this).css('background-color','pink');
+      }}, function(event){
+    
+        var element = $(this);
+        if (element.hasClass('selected')) {
+          $(this).css('background-color','red');
+    
+        } else {
+          $(this).css('background-color','white');
+        }
+      
+      }); 
+    
+      
+      var index = 0 ;
+    
+    $('td').click(function(event) {
+      
+      var element = $(this);
+              
+      index += 1;
+  
+      console.log(index);
+      
+      
+      
+      
+      if (element.hasClass('selected')) {
+        element.removeClass('selected');
+         
+      } else {
+        element.addClass('selected');
+        
+    
+        if(element.hasClass('divOn')||element.hasClass('compare')){
+              element.addClass('letter-o');
+        }else { 
+          element.addClass('letter-x');
+          alert('틀렸습니다');
+          $('td').removeClass();
+
+        }
+           
+      }
+
+      tdL[index-1] = this.id.substring(2);
+      
+      console.log(tdL.sort());
+      console.log(arr.sort());
+      
+      arr = arr.sort();
+      tdL = tdL.sort();
+      
+      if(String(arr[0]) == String(tdL[0])&&String(arr[1]) == String(tdL[1])){
+    	  element.attr('class','letter-v');
+    	  alert('맞았습니다');
+        $('td').removeClass();
+    
+      }
+      
+      
+    
+     
+    });
+    
+ 
+    
+  });
+</script>
+ 
+</head>
+ 
+<body>
+  <table border="1">
+    <tr>
+      <td id='td0'></td>
+      <td id='td1'></td>
+ 
+    </tr>
+    <tr>
+      <td id='td2'></td>
+      <td id='td3'></td>
+ 
+    </tr>
+ 
+  </table>
+  <button id='btnStart'>시작</button>
+</body>
+</html>

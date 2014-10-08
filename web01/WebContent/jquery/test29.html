@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트리스너 등록</title>
+
+
+<script src='jquery-1.11.1.js'></script>
+<script>
+
+/* bind()  이벤트 리스너 등록하는 함수얌
+*   $().bind(이벤트명,함수);
+*   $().bind({이벤트명:함수, 이벤트명:함수, ...});
+*/
+
+//ready이벤트는 DOM 트리가 완성되었을때 이번트 발생
+$(document).bind('ready',function(event){
+	alert('okok');
+})
+
+
+//ready 이벤트 리스너 등록의 단축 표기법!
+
+$(function(){
+	$('img').bind('click', function(event){
+		//이미지를 클릭하면   맨뒤로 해당이미지를 옮긴다~
+		$(this).appendTo('body');
+	});
+	
+});
+</script>
+
+</head>
+<body>
+<button id='btn1'>이벤트처리해제!!</button><br>
+<img id='img1' src='image1.jpg' width='150'>
+<img id='img2' src='image2.jpg' width='150'>
+<img id='img3' src='image3.jpg' width='150'>
+</body>
+
+</html>

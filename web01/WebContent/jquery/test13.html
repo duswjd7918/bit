@@ -11,48 +11,51 @@
  */
 
 $(function(){
+/* 	
+ 	//type속성이  radio인 태그 찾기
+ 	$('input[type=radio]').each(function(index,element){
+ 		console.log($(element).val());
+ 	});
+	 
 	
-	//type속성이  radio인 태그 찾기
-/* 	$('input[type=radio]').each(function(index,originalElement){
-		console.log($(originalElement).val());
-	}); */
-	
-	
-	//pseudo 셀렉터(필터) 사용하여  태그찾기
-	//input:슈도셀렉터
-/* 	//슈도셀렉터:  button, checkbox, file, image, password, radio,submit, reset,text...
+}); */
+
+/*   	//pseudo 셀렉터(필터) 사용하여  태그찾기    위의 예제와 동일행
+	//input:슈도셀렉터 
+	//슈도셀렉터:  button, checkbox, file, image, password, radio,submit, reset,text...
 	$('input:checkbox').each(function(index,originalElement){
 		console.log($(originalElement).val());
 	});
-});
- */
-	//입력 항목의 상태로 태그 선택
+}); */
+
+  
+/*   //입력 항목의 상태로 태그 선택
 	//상태 ->  checked, disabled, enabled, focus, input(모든 폼항목: input select button textarea),selected
- /*  //문제: 버튼 누르면~~~~check된 항목의 값을 출력하라!
+  //문제: 버튼 누르면~~~~check된 항목의 값을 출력하라!
   $('#btn1').click(function(){ 
 	  //radio  or   checkbox에 대해 선택된 태그를 찾는다.
-	  $('input:checked').each(function(i,e){    // ★★
-		  console.log($(e).val());
-		  
-     })
-  }); */
-	
-	
+	 $('input:checked').each(function(i,e){
+		 console.log($(e).val());
+	 })
+  });
+});  */
+
+  // 문제 :  select항목의 값을 알아내기!
 	  $('#btn1').click(function(){ 
-		 /*  문제 :  select항복의 값을 알아내기!
+		 
 		    $('#s1 option:selected').each(function(i,e){
 			  console.log($(e).val());		   }) 
 			  
 			  //select의 옵션중에서 사용자가 선택한 옵션 값 알아내기!!! 이게 더 좋네 > . <!!!
-			  console.log($('#s1').val());*/
-	   
-			  
-		//  문제: 사용자가 선택한 성별을 알아내기~
-	   console.log($('input[name=gender]:checked').val());
-	   
+			  console.log($('#s1').val());
 	  
+	    	//  문제: 사용자가 선택한 성별을 알아내기~
+			  console.log($('input[name=gender]:checked').val());
 	  });
-});
+ 
+	   
+
+}) 
 </script>
 
 </head>
@@ -61,7 +64,7 @@ $(function(){
 <form>
 <input type='text'><br>
 <input type='password'><br>
-<input type="checkbox" value='CHOCOLATE'>초코렛<br>
+<input type="checkbox" value='초코렛'>초코렛<br>
 <input type="checkbox">토마토파스타<br>    <!--value가 읎으닊까  기본 default값은 on -->
 <input type='radio' value='남자' name='gender'>남자
 <input type='radio' value='여자' name='gender'>여자

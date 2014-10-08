@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>moseenter/mouseleave/   mouseover/mouseout</title>
+<style>
+#d1 {
+border:1px solid red;
+}
+</style>
+
+<script src='jquery-1.11.1.js'></script>
+<script>
+/* hover()=>  mouseover,mouseout 이벤트 리스너 등록단축함수~
+ * mouseover: 해당 엘리먼트 위에 마우스 커서가 있을때
+ *               자식 엘리먼트에 가려졌다가 다시 나타나도 이벤트 발생한다.!
+ * mouseout: 해당 엘리먼트에서 마우스 커서가 사라질ㄸ ㅐ
+ *              자식 엘리먼트에 의해 가려질때도 이벤트 발생
+ * 두개를 한방에!!!!!!!!!!!!!!
+ */
+
+$(function(){
+		$('#d1').mouseenter(function(event){
+			console.log("mouseetner");
+			
+		})			 .mouseleave(function(event){
+			console.log("mouseleave");
+		});
+		$('#d1').mouseover(function(event){
+			console.log("mouseover");
+			
+		})			 .mouseout(function(event){
+			console.log("mouseout");
+		})
+						
+		$('#img1').mouseover(function(event){
+			event.stopPropagation();
+		}).mouseout(function(event){
+			event.stopPropagation();
+		});
+	
+});
+	
+	
+
+</script>
+
+</head>
+<body>
+
+<br>
+<div id='d1'>
+<img id='img1' src='image1.jpg' width='150px'>
+<button id='btnClose'>X</button>
+</div>
+</body>
+
+</html>

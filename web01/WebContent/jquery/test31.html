@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>one()</title>
+
+
+<script src='jquery-1.11.1.js'></script>
+<script>
+
+/* 
+one()=>리스너 등록
+$().one(이벤트명, 함수);
+*/
+
+
+//ready 이벤트 리스너 등록의 단축 표기법!
+
+$(function(){
+	$('#img1').one('click', function(event){//계속호출될함수를 묶엉
+     console.log('1111');
+	
+});
+	
+	
+
+</script>
+
+</head>
+<body>
+<button id='btn1'>이벤트처리해제!!</button><br>
+<img id='img1' src='image1.jpg' width='150'>
+<img id='img2' src='image2.jpg' width='150'>
+<img id='img3' src='image3.jpg' width='150'>
+</body>
+
+</html>

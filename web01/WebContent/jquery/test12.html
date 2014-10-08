@@ -16,22 +16,26 @@
 
 $(function(){
 	
-	//main div의 자손 태그 찾기
+	
+	//main div의 직계자식 찾기 (main아이디의 h2에 폰트색 red로
+ $('#main>h2').css('color','red');
+	
+	//main div의 자손 태그 찾기 (main아이디의 모든 h2태그의 폰트색을 pink)
 	$('#main h2').css('color','pink');
-	//main div의 직계자식 찾기
- 	$('#main>h2').css('color','red');
-	/* 
-	//main div의 자손 태그 찾기
-	$('#main h2').css('color','pink');
-	 */
-/*   $('#d1 > h2').css('color','red');
-  $('#d2 > h2').css('background-color','lightgray'); */
+	
+	//아이디가 d1인 직h2의 폰트색 red
+  $('#d1>h2').css('color','purple');
+	//아이디가 d2인 직계 h2의 배경색 lightgray
+  $('#d2 > h2').css('background-color','lightgray'); 
   
   //color속성은 자식태그로 상속된다.
   //border속성은 자식태그로 상속되지 않는다..
+  
+  //아이디가 main인 엘리먼트의 폰드색깔을 gray, border를 1pxsolidred
   $('#main').css('color','gray').css('border','1px solid red')	;
   
   //border속성은 상속되지 않기 때문에 일일이 태그 찾아 지해야한다.
+  //id가 d1인것의 h2의 border를 1px dached blue
   $('#d1>h2').css('border','1px dashed blue');
 });
 
@@ -50,6 +54,7 @@ $(function(){
 		<h2 class='blue'>제목2</h2>
 		<p>내용...2</p>
 	</div>
+
 
 	<div id='d2'>
 		<h2 class='blue yellow'>제목3</h2>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>toggle() 쓰지마~~~</title>
+
+
+<script src='jquery-1.11.1.js'></script>
+<script>
+/* click()  =<클릭 이벤트리스너 */
+
+
+
+$(function(){
+	
+/* var state=false;
+//버튼을 누를때마다 번갈아 가면ㅅ ㅓ  이미지태그를 생성@!@@
+//img4.jpg   img5.pjg
+	$('#btn1').click(function(event){
+		if(state){
+			$('<img>').attr('src','image2.jpg')
+			.css('width','100px')
+     .css('border','5px solid green')
+      .appendTo('body')	;
+      state=false;
+		}
+		else{
+		$('<img>').attr('src','image5.jpg')
+								.css('width','100px')
+		          .css('border','5px solid green')
+		          .appendTo('body')	;
+		state=true;
+	
+    	}
+	
+
+	}); */
+	
+	
+	
+	//toggle을 사용해보자 > _ <
+	$('#btn1').toggle(function(event){
+		$('<img>').attr('src','image5.jpg')
+		.css('width','100px')
+.css('border','5px solid green')
+.appendTo('body')	;
+		
+		
+	},function(event){
+		
+		$('<img>').attr('src','image2.jpg')
+		.css('width','100px')
+   .css('border','5px solid green')
+   .appendTo('body')	;
+	});
+	
+	
+	
+});
+	
+	
+
+</script>
+
+</head>
+<body>
+<button id='btn1'>이미지 추가 </button>
+<br>
+<img id='img1' src='image1.jpg' width='150'>
+
+</body>
+
+</html>
