@@ -2,26 +2,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>one()</title>
+<title>on()</title>
 
 
 <script src='jquery-1.11.1.js'></script>
 <script>
 
 /* 
-one()=>리스너 등록
-$().one(이벤트명, 함수);
+on()=>리스너 등록
+$().on(이벤트명, 함수);
 */
 
 
 //ready 이벤트 리스너 등록의 단축 표기법!
 
 $(function(){
-	$('#img1').one('click', function(event){//계속호출될함수를 묶엉
+	$('#img1').on('click', function(event){//계속호출될함수를 묶엉
      console.log('1111');
 	
 });
-	
+});
 	
 
 </script>
