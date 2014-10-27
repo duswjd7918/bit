@@ -18,8 +18,8 @@ public class Test48 {
 
 		/*System.out.println(s1.toString());
 		System.out.println(s2.toString());*/
-		System.out.println(s1);
+		/*System.out.println(s1); //홍길동,10
 		System.out.println(s2);  //같은 결과가 나옴 ㅋㅋㅋㅋㅋㅋ          클래스명@hashCode값
-	}
+*/	}
 
 }

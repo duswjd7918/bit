@@ -8,7 +8,7 @@ public class Test02 {
 
 	public static void main(String[] args) { //aaa bbb ccc의 주소를 args  !
 		
-		Iterator iterator = new Iterator(args);  //프로그램 아규먼트(aaabbbccc)로 입력받긔
+		Iterator iterator = new Iterator(args);  //프로그램 아규먼트(aaa bbb ccc)로 입력받긔
 		while(iterator.hasNext()){              // java (package name)-Test02 aaa bbb ccc
 			System.out.println(iterator.next());
 		}

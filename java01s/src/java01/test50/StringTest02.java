@@ -84,7 +84,7 @@ public class StringTest02 {
 		String str3 = new String("Hello");//Heap에 인스턴스생성
 		System.out.println(str1);
 		if(str1 == str2) System.out.println("str1==str2"); 
-		if(str1 == str3) System.out.println("str1==str3"); 
+		if(str1 == str3) System.out.println("str1==str3"); //nono
 		//자바는 문자열을 객체로 다룬다.
 		//문자열을 비교할 때는 equals()를 사용하렴! > _<
 		

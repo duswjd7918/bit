@@ -16,7 +16,7 @@ public class Car {
 			
 		}
 		
-		public Car(String maker, String model, int cc){
+		public Car(String maker, String model, int cc){//Overloading이군!
 			this.maker = maker;
 			this.model = model;
 			this.cc = cc;

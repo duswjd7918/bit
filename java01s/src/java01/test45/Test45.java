@@ -8,7 +8,7 @@ package java01.test45;
 public class Test45 {
 
 	public static void main(String[] args){
-		//참조변수를 선언할 때는 클르새가 로딩되지 않는다.
+		//참조변수를 선언할 때는 클래스가 로딩되지 않는다.
 		ClassA obj1;
 		
 		//인스턴스 생성할 때 클래스 로딩됨

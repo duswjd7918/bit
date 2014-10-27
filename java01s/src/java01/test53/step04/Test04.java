@@ -31,7 +31,7 @@ public class Test04 {
 		//클래스 이름(패키지명 포함)으로 객체 생성하기
 		// 1)                 ▼  클래스를 로딩하라      ((( 클래스정보를담은곳 Class)))
 		Class clazz = Class.forName(iteratorClassName);
-		  //mainarea에 넣어 Iterator를 
+		  //method area에 넣어 Iterator를 
 		
 		// 2) Class객체clazz를 사용하여 인스턴스 생성▼ 
 		Iterator iterator = (Iterator)clazz.newInstance();
