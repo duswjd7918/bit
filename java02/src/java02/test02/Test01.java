@@ -35,7 +35,7 @@ public class Test01 {
         in.close();
       } catch (IOException ex) {
       } // close하다 예외발생시 아무것도안한다.
-    }
-  }
+    }//finally꺼
+  }//main
 
-}
+}//Test01

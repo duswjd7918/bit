@@ -1,11 +1,10 @@
-/* QUIZ 
- 파일을 복제하는 기능을 구현하세욤
- $Test02 /home/bit/javaide/workspace/java02/img1.jpg(엔터)
- =>img1.jpg파일을 복제하여 img1-01.jpg
+/* Quiz
+ - 파일을 복제하는 기능을 구현하시오.
+ - $ Test02 img1.jpg(엔터)
+ - => img1.jpg 파일을 복제하여 img1-01.jpg
  
- HINT 출력은 FileOutputStream 클래스를 사용
+ - 힌트: 출력은 FileOutputStream 클래스를 사용하라!
  */
-
 package java02.test02;
 
 import java.io.FileInputStream;
@@ -15,42 +14,42 @@ import java.io.IOException;
 
 public class Test02 {
 
-  public static void main(String[] args) {
+  public static void main(String[] args)  {
     FileInputStream in = null;
     FileOutputStream out = null;
-    try {
-      // 1. 입력스트림 객체를 준비한다.
-      // 2. 현재 파일의 위치는 프로젝트 디렉토리다.
-      in = new FileInputStream(args[0]);
-      out = new FileOutputStream("img1-01.jpg");
-      int count = 0;
-      int b = -1;
-
-      // 2.read()를 통해 "  1바이트    " 읽기!!!
-      // 리턴 타입이 int라 해서 4바이트를 읽는건 아니다.
-      while ((b = in.read()) != -1) {
-        count++;
+    try{
+      in = new FileInputStream(args[0]); 
+      
+      // args[0]가 img1.jpg 라면, => img1-01.jpg
+      // 확장자 앞의 문자열을 자른다. => x
+      // x + "-01" + 확장자 뒤의 문자열을 붙인다.
+      /*
+      String arr[]= args[0].split("\\."); // aaa.bbb.ttt.jpg
+      
+      String newFileName = arr[arr.length-2] + "-01." 
+                + arr[arr.length-1];
+      */
+      int index = args[0].lastIndexOf('.');
+      String newFileName = args[0].substring(0, index)
+          + "-01" + args[0].substring(index);
+      
+      out = new FileOutputStream(newFileName);
+      
+      int b = 1;
+      
+      while ((b = in.read()) != -1 ) {
+        //System.out.println(b);
         out.write(b);
-      } // 1byte return return -1면 못읽었다는구
-
-      System.out.println("파일크기:" + count + "바이트입니당");
+      } 
     } catch (FileNotFoundException ex) {
-      System.out.println("img1.jpg 파일을 찾을 수 없습니다");
-    } catch (IOException ex) {
-      System.out.println("img1.jpg 파일을 찾을 수 없습니다");
+      System.out.println("img1.jpg 파일을 찾을 수 없습니다.");
+    } catch (IOException ex) {   
+      System.out.println("읽기 오류!");
+          
     } finally {
-      // read()중에 오류가 발생하면 close()를 호출도 못한당 ㅠㅠ
-      // 그래서 자원을 해제하는 명령은 finally 블록에 두도록해라
-      // 3.File이나 DB, socket등의 자원은 사용한 다음, 명시적으로 해제해야함
-      try {
-        in.close();
-       
-      } catch (IOException ex) {
-      } // close하다 예외발생시 아무것도안한다.
-      try{
-        out.close();
-      }catch(IOException ex){}
+      try {in.close();} catch (IOException ex) {}
+      try {out.close();} catch (IOException ex) {}
     }
   }
-  
+
 }
