@@ -128,6 +128,15 @@ values(5, 'a05.gif');
 insert into PROD_PHOTS(PNO, URL)
 values(7, 'a07.gif');
 
+insert into PROD_PHOTS(URL)
+values('x01.gif');
+
+insert into PROD_PHOTS(URL)
+values('x02.gif');
+
+insert into PROD_PHOTS(URL)
+values('x03.gif');
+
 
 /* 주문 정보 입력*/
 insert into ORDERS(PNO, UID, QTY, ODATE)
@@ -148,12 +157,20 @@ values (3, 'u07', 6, '2014-09-07');
 insert into ORDERS(PNO, UID, QTY, ODATE)
 values (7, 'u10', 1, '2014-10-07');
 
+/*UPDATE
+ *  문법: update  테이블명  set 컬럼명=값, 컬럼명=
+ *       where 조건1 ...*/
+insert into ORDERS(PNO,UID,QTY,ODATE)
+values (7, 'u03', 5, '2014-11-10');
 
+update ORDERS set
+	QTY=3,
+	ODATE='2014-11-09'
+where ONO=7;
 
-
-
-
-
+/*문법: delete from 테이블명 where 조건1..*/
+delete from ORDERS
+where ONO=7;
 
 
 
