@@ -8,21 +8,16 @@ package java63.servlets.test04;
  * 					실행 완료되면 제거됨.
  * */
 
-import java.io.InputStream;
-import java63.servlets.test04.dao.ProductDao;
-
-import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 //@WebListener
 public class ContextLoaderListener implements ServletContextListener {//Spring MVC에 있는 크래슈?이름
 	//Context: webApp이란겨 //ContextLoader: Context의 실행환경?을 로드해주는 ㅈ ㅏ.
-
+	static ApplicationContext appCtx;
 	
 	
 	//웹어플리케이션이 시작할 때 호출됨.
@@ -30,23 +25,12 @@ public class ContextLoaderListener implements ServletContextListener {//Spring M
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
 		
-		try {  
-			  ServletContext ctx = sce.getServletContext();
-		      InputStream inputStream = 
-		    		  Resources.getResourceAsStream(
-		    				  ctx.//getServletConfig().
-		    				  getInitParameter("mybatisConfig"));
-		      SqlSessionFactory sqlSessionFactory = 
-		          new SqlSessionFactoryBuilder().build(inputStream);
-		      
-		      ProductDao productDao = new ProductDao();
-		      productDao.setSqlSessionFactory(sqlSessionFactory);
-		      
-		      //ServletContext 보관소에 객체저장!  HashMap에 저장과 비슷 (실무방법)
-		      ctx.setAttribute("productDao", productDao);
-		    } catch (Exception e) {
-		      e.printStackTrace();
-		    }
+		try {
+			appCtx = new ClassPathXmlApplicationContext(
+		 			 new String[]{"java63/servlets/test04/application-context.xml"});
+		} catch (Exception e) {
+		    e.printStackTrace();
+		}
 	}
 
 	//웹어플리케이션이 종료할때 홓출됨.

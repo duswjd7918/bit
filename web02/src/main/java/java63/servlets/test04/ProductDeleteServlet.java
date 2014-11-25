@@ -7,6 +7,7 @@ package java63.servlets.test04;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+
 import java63.servlets.test04.dao.ProductDao;
 
 import javax.servlet.GenericServlet;
@@ -30,8 +31,10 @@ public class ProductDeleteServlet extends GenericServlet {
 	  int no = Integer.parseInt(request.getParameter("no"));
     //ContextLoaderListener.productDao.delete(no);
         
-    ProductDao productDao = (ProductDao) this.getServletContext()
-								.getAttribute("productDao");
+    /*ProductDao productDao = (ProductDao) this.getServletContext()
+								.getAttribute("productDao");*/
+	ProductDao productDao = (ProductDao) ContextLoaderListener.appCtx
+	    		.getBean("productDao");
     productDao.delete(no);
     
     response.setContentType("text/html;charset=UTF-8");

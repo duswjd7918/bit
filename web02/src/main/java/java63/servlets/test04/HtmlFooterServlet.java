@@ -13,7 +13,7 @@ import javax.servlet.annotation.WebServlet;
   
   HTML페이지의 헤더부분의 출력을 맡는다.
 */
-@WebServlet("/common/footer")
+//@WebServlet("/common/footer")
 public class HtmlFooterServlet extends GenericServlet {
 
 	@Override

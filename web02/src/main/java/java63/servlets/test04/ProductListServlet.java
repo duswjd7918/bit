@@ -2,6 +2,7 @@ package java63.servlets.test04;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+
 import java63.servlets.test04.dao.ProductDao;
 import java63.servlets.test04.domain.Product;
 
@@ -36,8 +37,10 @@ public class ProductListServlet extends GenericServlet {
 		
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		ProductDao productDao = (ProductDao) this.getServletContext()
-				.getAttribute("productDao");
+		/*ProductDao productDao = (ProductDao) this.getServletContext()
+				.getAttribute("productDao");*/
+		ProductDao productDao = (ProductDao) ContextLoaderListener.appCtx
+	    		.getBean("productDao"); //Spring에서꺼내 ㅋ ㅋ 
 		
 
 		out.println("<html>");

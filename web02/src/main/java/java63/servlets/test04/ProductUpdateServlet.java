@@ -31,8 +31,10 @@ public class ProductUpdateServlet extends GenericServlet {
     //AppInitServlet.productDao.update(product);
     //ContextLoaderListener.productDao.update(product);
 
-    ProductDao productDao = (ProductDao) this.getServletContext()
-			.getAttribute("productDao");
+   /* ProductDao productDao = (ProductDao) this.getServletContext()
+			.getAttribute("productDao");*/
+    ProductDao productDao = (ProductDao) ContextLoaderListener.appCtx
+    		.getBean("productDao");
     productDao.update(product);
 
     HttpServletResponse orginResponse = (HttpServletResponse)response;
