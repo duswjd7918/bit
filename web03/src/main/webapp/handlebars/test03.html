@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Handlebars JS - 연습하장</title>
+</head>
+<body>
+<h1>Handlebars JS -03</h1>
+<table id='cardTable' border='1'></table>
+
+
+<script id='template' type="text/x-handlebars-template">
+<tr>
+  <th>이름</th><th>나이</th><th>전화</th>
+</tr>
+{{#each cards}}
+<tr>
+ <td>{{name}}</td><td>{{age}}</td><td>{{tel}}</td>
+</tr>
+{{/each}}
+</script>
+<script type="text/javascript" src ='../js/handlebars-v2.0.0.js'></script>
+<script type="text/javascript" src ='../js/jquery-1.11.1.js'></script>
+<script type="text/javascript">
+
+
+var source = $('#template').html();
+var template = Handlebars.compile(source);
+var html = template(
+		{
+			cards: [
+			        {name:'홍길동', age:20, tel:'555-1111'},
+              {name:'임꺾정', age:30, tel:'555-2222'},
+              {name:'안중근', age:40, tel:'555-3333'},
+              {name:'운벙길', age:50, tel:'555-4444'},
+              {name:'잇순신', age:60, tel:'555-5555'},
+			        ]
+			
+		}
+);
+		
+
+$('#cardTable').html(html);
+</script>
+</body>
+</html>

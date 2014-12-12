@@ -55,7 +55,7 @@ ${product.name} <br>
 <c:set target="${product}" property="name" value="오호라폰" />
 ${product.name} <br>
 
-<h2>c:remove</h2>
+<h2> ♥ c:remove</h2>
 <p>보관소에 저장된 객체ㅈ ㅔ 거 하 기</p>
 ${pageScope.name1}<br>
 <c:remove var="name1" scope="page" />

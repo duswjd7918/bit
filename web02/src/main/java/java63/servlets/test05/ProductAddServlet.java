@@ -60,8 +60,7 @@ public class ProductAddServlet extends HttpServlet {
  		 rd.forward(request, response);
      } 
     
-    HttpServletResponse orginResponse = (HttpServletResponse)response;
-    orginResponse.sendRedirect("list");
+    response.sendRedirect("list");
   }
   
 }
